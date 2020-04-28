@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-color: #222222;
+}
+
+form{
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .todo-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        input, button{
+            border: none;
+            padding: 0.5rem;
+            font-size: 2rem;
+        }
+    
+        input{
+            background-color: #333333;
+            color: gainsboro;
+            border-radius: 10px 0px 0px 10px;
+        }
+    
+        button{
+            cursor: pointer;
+            background-color: #333333;
+            color: #F22B29;
+            transition: all 0.3s ease;
+            border-radius: 0px 10px 10px 0px;
+            padding: 0.5rem 1.3rem;
+        }
+    }
+
+    .todo-form:hover{
+        button{
+            background-color: #F22B29;
+            color: #333333;
+        }
+    }
+
+    .select{
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+
+        select{
+            appearance: none;
+            outline: none;
+            border: none;
+            background-color: #333333;
+            color: gainsboro;
+            width: 15rem;
+            padding: 1rem;
+            cursor: pointer;
+            border-radius: 10px;
+            font-size: 1rem;
+        }
+
+        .bx-chevron-down{
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 0.85rem;
+            color: #F22B29;
+            background-color: #333333;
+            pointer-events: none;
+            font-size: 2rem;
+            border-radius: 0px 10px 10px 0px;
+            transition: all 0.3s ease;
+        }
+    }
+
+    .select:hover{
+        .bx-chevron-down{
+            color: #333333;
+            background-color: #F22B29;
+        }
+    }
+}
+
+.todo-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .todo-list{
+        min-width: 30%;
+        list-style: none;
+
+        .todo{
+            margin: 0.5rem;
+            background-color: #333333;
+            font-size: 1.2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 10px;
+            color: gainsboro;
+            transition: all 0.5s ease-in-out;
+
+            .todo-item{
+                flex: 1;
+                padding: 0rem 0.5rem;
+            }
+
+            .complete-btn,
+            .delete-btn{
+                color: #222222;
+                padding: 0.5rem;
+                cursor: pointer;
+                font-size: 1.5rem;
+                border: none;
+                transition: opacity 0.3s ease-in-out;
+
+                i{
+                    pointer-events: none;
+                }
+            }
+
+            .complete-btn:hover,
+            .delete-btn:hover{
+                opacity: 0.7;
+            }
+
+            .complete-btn{
+                background-color: rgb(41, 242, 58);
+            }
+
+            .delete-btn{
+                background-color: #F22B29;
+                border-radius: 0px 10px 10px 0px;
+            }
+        }
+    }
+}
+
+.completed{
+    text-decoration: line-through;
+    opacity: 0.3;
+}
+
+.move-out{
+    transform: translateX(-100%);
+    opacity: 0;
+}
